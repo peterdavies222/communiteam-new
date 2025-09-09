@@ -1,0 +1,156 @@
+
+.signinup {
+
+    display: flex;
+    gap: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    // left side
+
+    &__left {
+        width: calc(50vw - 100px);
+        height: 100vh;
+        padding: 30px 60px;
+        flex-shrink: 0;
+        display: flex;
+        gap: 120px;
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    &__title {
+        width: 100%;
+    }
+
+    &__logo {
+        width: 270px;
+        max-width: 100%;
+    }
+
+    &__tagline {
+        font-family: 'sofia-medium';
+        margin-top: 6px;
+        font-size: 1rem;
+        color: var(--ct-midgrey);
+    }
+
+    &__form {
+        width: clamp(50%, 375px, 100%);
+        // overflow-y: auto;
+        padding: 5px;
+        margin-inline: -5px;
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: calc(36rem / 16);
+        }
+
+        .input-group:not(:last-of-type) {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-family: 'sofia-bold';
+            color: var(--ct-black);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        sl-input {
+            &::part(base) {
+                background-color: transparent;
+                border: solid var(--ct-midgrey) 1px;
+                font-family: 'sofia-regular';
+            }
+        }
+
+        sl-button {
+
+            margin-top: 30px;
+
+            &::part(base) {
+                background-color: var(--ct-green);
+                color: var(--ct-black);
+                font-family: 'sofia-pro-soft', sans-serif !important;
+                border: none;
+                font-size: calc(20rem / 16);
+
+                &:hover {
+                    background-color: var(--ct-tintedgreen);
+                }
+            }
+        }
+        
+        p {
+            width: 100%;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+    }
+
+    // right side
+    &__right {
+        height: 100vh;
+        width: calc(50vw + 100px);
+        flex-shrink: 0;
+        -webkit-mask-image: url(../../static/images/mask-curve.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../../static/images/mask-curve.svg);
+        mask-size: cover;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 20% 50%;
+    }
+
+}
+
+#root:has(main.signinup) {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .signinup {
+        flex-direction: column;
+
+        &__left {
+            width: 100%;
+            padding: 30px var(--ct-margins);
+
+            &::after {
+                height: 0;
+            }
+        }
+
+        &__form {
+            width: 100%;
+            background-color: #ffffffdd;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 30px;
+        }
+
+        &__right {
+            position: absolute;
+            z-index: -1;
+            mask-image: none;
+            width: 100%;
+        }
+
+        &__image {
+            object-position: 20% 50%;
+        }
+    }
+
+    // #root:has(main.signinup) {
+    //     overflow: auto;
+    // }
+}
+

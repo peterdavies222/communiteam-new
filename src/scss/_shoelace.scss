@@ -1,0 +1,57 @@
+// Shoelace
+
+// sl-dialog
+sl-dialog::part(title){
+  font-weight: 500;
+  font-size: 1.6em;
+}
+
+
+// RESPONSIVE - MOBILE -------------------
+@media all and (max-width: 768px){ 
+
+  sl-dialog::part(panel) {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    max-width: none;
+  }
+}
+
+sl-input, sl-select, sl-radio-group {
+  &::part(base), &::part(combobox), &::part(listbox), &::part(label) {
+      background-color: var(--ct-lightyellow);
+      border: solid 1px var(--ct-midgrey);
+      font-family: 'sofia-regular';
+  }
+}
+
+sl-radio-button::part(label) {
+  font-family: 'sofia-regular';
+}
+
+sl-radio-button::part(button) {
+  border: solid var(--ct-midgrey) 1px;
+}
+
+sl-dropdown sl-button::part(base) {
+  background-color: var(--ct-lightyellow);
+  border: solid var(--ct-midgrey) 1px;
+}
+
+
+sl-textarea::part(textarea) {
+  font-family: 'sofia-regular';
+  min-height: 2.5rem;
+
+}
+
+sl-textarea::part(base) {
+  background-color: var(--ct-lightyellow);
+  border: solid var(--ct-midgrey) 1px;
+  border-radius: 20px;
+}
+
+sl-button::part(label) {
+  font-family: 'sofia-pro-soft', sans-serif;
+}
