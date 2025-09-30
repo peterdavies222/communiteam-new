@@ -34,7 +34,7 @@ class OnboardingView {
         <div class="main-content onboarding">
 
           <div class="signinup__title">
-            <img src="../images/ct-logo.svg" alt="Communiteam logo." class="signinup__logo">
+            <img src="../images/logo.svg" alt="Communiteam logo." class="signinup__logo">
             <p class="signinup__tagline">Find your community. Find your team.</p>
           </div>
 
