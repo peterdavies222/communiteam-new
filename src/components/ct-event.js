@@ -69,12 +69,17 @@ customElements.define('ct-event', class Communiteam extends LitElement {
         width: 100%;
         max-width: 100%;
         ${this.type == 'grid' ? 'width: 100%;' : ''}
-        height: fit-content;
+        height: 100%;
         margin-bottom: 5px;
         background-color: #fff;
         border-radius: 15px;
         overflow: hidden;
         border: solid #E7DFD4 2px;
+      }
+
+      .event:not(.event--horizontal) {
+        display: flex;
+        flex-direction: column;
       }
 
       .event__image {
@@ -98,6 +103,7 @@ customElements.define('ct-event', class Communiteam extends LitElement {
         display: flex;
         flex-direction: column;
         justify-content: space-between; 
+        flex-grow: 1;
       }
       .event__details {
         margin: 0 0 15px 0;
@@ -119,6 +125,7 @@ customElements.define('ct-event', class Communiteam extends LitElement {
                 line-clamp: 2; 
         -webkit-box-orient: vertical;
         line-height: 1;
+        overflow: hidden;
       }
       .event__description {
         margin: 0;
